@@ -12,10 +12,9 @@ const Table = ({ dataUrl }) => {
   //   get keys for row title
   const subItemTitle = Object.keys(subItem[0]);
 
-  // sticky boom
+  // sticky 
   const [isTop, setTop] = useState(0);
   const [isHeight, setHeight] = useState(0);
-
 
   const ref = useRef();
 
@@ -38,12 +37,9 @@ const Table = ({ dataUrl }) => {
 
   const heightSummary = () => {
     if (isTop > 0) {
-      console.log("hey");
     } else if (isTop < 0 < isTop + isHeight - 250) {
       heightStyle = -isTop;
-      console.log("meduim");
     } else {
-      console.log("wtf");
     }
   };
 
@@ -61,7 +57,7 @@ const Table = ({ dataUrl }) => {
         {/* body row elem  */}
         <div className="body-wrapper">
           {subItem.map((el, id) => (
-            <RowBody key={id} dataBody={el} />
+            <RowBody key={id} color={id} dataBody={el} />
           ))}
         </div>
       </div>
